@@ -117,7 +117,7 @@ const api = {
   // 漏斗的第一页table图表
   radioTrend(params) {
     return fetch({
-      url: 'funnel/findFunnel',
+      url: '/findChannelUse',
       method: 'GET',
       params: params
     })
@@ -167,7 +167,7 @@ const api = {
   // 频次和时长分析表格接口（就一个页面）
   findChannelUse(params) {
     return fetch({
-      url: 'findChannelUse',
+      url: '/findChannelUse',
       method: 'GET',
       params: params
     });
@@ -183,21 +183,42 @@ const api = {
   // 流向分析图表接口，技术不会定义，求hank帮助
   flowCharts(params) {
     return fetch({
-      url: '/deep/getDeepChart',
+      url: '/flowcharts',
       method: 'GET',
       params: params
     });
   },
   // 模拟接口
- //行为分析第一页下载趋势接口
- trend(params) {
-  return fetch({
-    url: '/getTrends',
-    method: 'GET',
-    params: params
-  });
-},
-
+  //行为分析第一页下载趋势接口
+  downloadTrend(params) {
+    return fetch({
+      url: '/downloadTrend',
+      method: 'GET',
+      params: params
+    });
+  },
+  eachTrend(params) {
+    return fetch({
+      url: '/eachTrend',
+      method: 'GET',
+      params: params
+    });
+  },
+  // 质量分析
+  findChannelUse(params) {
+    return fetch({
+      url: '/findChannelUse',
+      method: 'GET',
+      params: params
+    });
+  },
+  findChannelAppUse(params) {
+    return fetch({
+      url: '/findChannelAppUse',
+      method: 'GET',
+      params: params
+    });
+  }
   // 行为分析第一页的导出接口
   // exportTrendExcel(params) {
   //   return fetch({

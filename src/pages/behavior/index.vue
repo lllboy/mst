@@ -5,7 +5,7 @@
       <div class="menu">
         <date-picker v-model="dateVal" :limit="dataLimitVal" :type="dateTypeVal" @change-date-type="changeDateType" @change-date-limit="changeDateLimit" @change-date="changeDate" @change-week-date="changeWeekDate" @change-month-date="changeMonthDate" :startDate="startDate" :endDate="endDate">
           <span>
-            <el-button type="primary" @click="submitData">确定</el-button>
+            <el-button type="success" @click="submitData">确定</el-button>
           </span>
         </date-picker>
       </div>
@@ -154,7 +154,7 @@ export default {
         orderType: this.orderType,
         orderColumn: this.orderColumn
       }
-      api.trend(params).then(res => {
+      api.downloadTrend(params).then(res => {
         this.loading = false;
         this.count = true;
         if (res.data.tableHeader !== null) {
@@ -234,5 +234,13 @@ export default {
 </script>
 
 <style lang="less">
-
+   .el-radio-button__orig-radio:checked+.el-radio-button__inner{
+     background: #67c23a;
+   }
+   .el-tabs--border-card>.el-tabs__header .el-tabs__item:hover {
+    color: #67c23a;
+}
+.el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active{
+  color: #67c23a;
+}
 </style>

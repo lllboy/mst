@@ -7,6 +7,7 @@ import ElementUI from 'element-ui'
 import 'babel-polyfill'
 
 import 'element-ui/lib/theme-chalk/index.css'
+// import '../theme/index.css'
 import './style/index.less'
 import './style/nprogress.css'
 import './style/reset.css'

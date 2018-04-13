@@ -9,22 +9,13 @@
         <el-col :span="24">
           <date-picker v-model="dateVal" :limit="dataLimitVal" :type="dateTypeVal" @change-date-type="changeDateType" @change-date-limit="changeDateLimit" @change-date="changeDate" @change-week-date="changeWeekDate" @change-month-date="changeMonthDate" :startDate="startDate" :endDate="endDate">
             <span>
-              <el-button type="primary" @click="submitData">确定</el-button>
+              <el-button type="success" @click="submitData">确定</el-button>
             </span>
           </date-picker>
         </el-col>
       </div>
       <div class="table-content">
-        <div class="table-content-header">
-          <el-button :plain="true" type="primary" @click="downloadData" size="small" class='btn-download'>
-            <i class="iconfont icon-download"></i>数据导出</el-button>
-          <span>
-            <span class="label">趋势图表：</span>
-            <el-switch v-model="switchVal" on-text="" off-text="" on-color="#67C72B" off-color="#ccc">
-            </el-switch>
-          </span>
-
-        </div>
+        
         <div class="table-content-body" v-loading.table-content-body="loading">
           <el-collapse-transition>
             <div class="chart" v-show="switchVal">
@@ -108,6 +99,16 @@
             </div>
           </el-collapse-transition>
           <trend :current="currentPage" :type="dateTypeVal" :tableData="tableData" :tableHeader="tableHeader" @link-page="linkDetail" @change-sort="changeSort" @change-size="handleSizeChange" @change-current="handleCurrentChange" :total="total"></trend>
+        </div>
+        <div class="table-content-header">
+          <el-button :plain="true" type="primary" @click="downloadData" size="small" class='btn-download'>
+            <i class="iconfont icon-download"></i>数据导出</el-button>
+          <span>
+            <span class="label">趋势图表：</span>
+            <el-switch v-model="switchVal" on-text="" off-text="" on-color="#67C72B" off-color="#ccc">
+            </el-switch>
+          </span>
+
         </div>
       </div>
     </div>

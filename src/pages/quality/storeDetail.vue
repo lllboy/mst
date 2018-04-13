@@ -347,7 +347,7 @@ export default {
         orderColumn: this.orderColumn,
         channelId: this.$route.params.storeId,
       }
-      api.findAppFunnel(params).then(res => {
+      api.findChannelAppUse(params).then(res => {
         this.loading = false;
         this.count = true;
         if (res.data.tableHeader !== null) {

@@ -197,7 +197,7 @@ export default {
         // date: this.dateTypeVal === 'week' ? this.weekDateVal : this.monthDateVal,
         dateType: this.dateTypeVal,
       }
-      api.channelAppTrend(params).then(res => {
+      api.findChannelAppUse(params).then(res => {
         if (res.data.tableData.length) {
           this.appData = res.data.tableData;
           this.appName = res.data.tableData[0].appName;
@@ -271,7 +271,7 @@ export default {
         orderType: this.orderType,
         orderColumn: this.orderColumn,
       }
-      api.findFunnel(params).then(res => {
+      api.findChannelAppUse(params).then(res => {
         this.loading = false;
         this.count = true;
         if (res.data.tableHeader !== null) {

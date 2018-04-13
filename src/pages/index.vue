@@ -137,11 +137,11 @@ export default {
                 },
                 {
                   title: '新装人均时长',
-                  link: '/frequencyTrend'
+                  link: '/durationTrend'
                 },
                 {
                   title: '新装留存',
-                  link: '//keepTrend'
+                  link: '/keepTrend'
                 }
               ]
             },
@@ -338,7 +338,10 @@ export default {
         line-height: 45px;
         height: 45px;
         &:hover {
-          background: #69c72b;
+          background: white;
+          border-left: 1px solid green;
+          color:rgb(136,149,168);
+          opacity: .8;
         }
         span {
           display: block;
@@ -346,16 +349,15 @@ export default {
         }
       }
       .is-active {
-        color: #fff;
+        color:rgb(136,149,168);
         border-left: 1px solid#69c72b;
-        background: #69c72b;
+        
         position: relative;
         &:after {
           content: "";
           position: absolute;
           height: 100%;
           width: 3px;
-          background: #69c72b;
           right: 0;
           top: 0;
         }

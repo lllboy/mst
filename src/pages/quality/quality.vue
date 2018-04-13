@@ -6,7 +6,7 @@
         <el-col :span="24">
           <date-picker v-model="dateVal" :limit="dataLimitVal" :type="dateTypeVal" @change-date-type="changeDateType" @change-date-limit="changeDateLimit" @change-date="changeDate" @change-week-date="changeWeekDate" @change-month-date="changeMonthDate" :startDate="startDate" :endDate="endDate">
             <span>
-              <el-button type="primary" @click="submitData">确定</el-button>
+              <el-button type="success" @click="submitData">确定</el-button>
             </span>
           </date-picker>
         </el-col>
